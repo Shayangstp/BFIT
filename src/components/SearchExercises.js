@@ -40,6 +40,7 @@ const SearchExercises = ({ setExrcises, bodyPart, setBodyPart }) => {
           exercise.equipment.toLowerCase().includes(search) ||
           exercise.bodyPart.toLowerCase().includes(search)
       );
+
       setSearch("");
       setExrcises(searchExercises);
     }
@@ -67,11 +68,12 @@ const SearchExercises = ({ setExrcises, bodyPart, setBodyPart }) => {
             background: "#fff",
             borderRadius: "400px",
           }}
+          label="Search Exercises"
+          color="error"
           type="text"
           height="76px"
           value={search}
           onChange={onChangeHandler}
-          placeholder="Search Exercises"
         />
         <Button
           className="search-btn"
@@ -84,6 +86,7 @@ const SearchExercises = ({ setExrcises, bodyPart, setBodyPart }) => {
             fontSize: { lg: "20px", xs: "14px" },
             position: "absolute",
             right: "0",
+            "&:hover": { backgroundColor: "transparent" },
           }}
           onClick={searchHandler}
         >
