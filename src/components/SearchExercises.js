@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Stack, Button, Typography, TextField, Box } from "@mui/material";
 import { exerciseOptions, FetchData } from "../utils/FetchData";
 import HorizantalScrollBar from "./HorizantalScrollBar";
+import classes from "./SearchExercises.module.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { lightBlue } from "@mui/material/colors";
+import SearchIcon from "@mui/icons-material/Search";
 
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState("");
@@ -46,52 +50,74 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
     }
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: lightBlue,
+    },
+  });
+
   return (
-    <Stack alignItems="center" justifyContent="center" p="20px" mt="37px">
+    <Stack
+      alignItems="center"
+      justifyContent="center"
+      p="20px"
+      mt="37px"
+      id="search"
+    >
       <Typography
         fontWeight="700"
-        sx={{ fontSize: { lg: "44px", sx: "30px" } }}
+        sx={{ fontSize: { sm: "44px", sx: "30px" } }}
+        mt="80px"
         mb="50px"
         textAlign="center"
+        fontFamily="inherit"
       >
-        Awesome Exercises You <br /> Should Know
+        <div className={classes.text}>
+          Awesome Exercises You <br /> Should Know
+        </div>
       </Typography>
       <Box position="relative" mb="72px">
         <TextField
+          variant="standard"
           sx={{
             input: {
+              fontFamily: "inherit",
               fontWeight: "700",
-              borderRadius: "4px",
+              borderRadius: "1px",
               border: "none",
+              color: "#000",
             },
-            width: { lg: "800px", sx: "350px" },
-            background: "#fff",
-            borderRadius: "400px",
+            width: { sm: "600px", xs: "350px" },
+            background: "transparent",
           }}
           label="Search Exercises"
-          color="error"
+          color="primary"
           type="text"
           height="76px"
           value={search}
           onChange={onChangeHandler}
         />
-        <Button
-          className="search-btn"
-          sx={{
-            bgcolor: "#ff2526",
-            color: "#fff",
-            textTransform: "none",
-            width: { lg: "175px", xs: "80px" },
-            height: "56px",
-            fontSize: { lg: "20px", xs: "14px" },
-            position: "absolute",
-            right: "0",
-            "&:hover": { backgroundColor: "transparent" },
-          }}
-          onClick={searchHandler}
-        >
-          Search
-        </Button>
+        <ThemeProvider theme={theme}>
+          <Button
+            // className="search-btn"
+            variant="outlined"
+            sx={{
+              textTransform: "none",
+              width: { lg: "100px", xs: "80px" },
+              height: "40px",
+              fontSize: { lg: "14px", xs: "14px" },
+              position: "absolute",
+              bottom: "10px",
+              right: "0",
+              fontFamily: "inherit",
+              // fontWeight: "700",
+              "&:hover": { backgroundColor: "transparent" },
+            }}
+            onClick={searchHandler}
+          >
+            <SearchIcon />
+          </Button>
+        </ThemeProvider>
       </Box>
       <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
         <HorizantalScrollBar

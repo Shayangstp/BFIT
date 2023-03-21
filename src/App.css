@@ -1,12 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
 body {
-  font-family: "Josefin Sans";
-  background-color: #fffafb;
+  font-family: "Open Sans", sans-serif;
+  background-color: #dbdbdb;
 }
 
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -53,12 +59,14 @@ body {
 }
 
 .hero-banner-img {
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
-  right: 40px;
-  top: 0px;
-  width: 700px;
-  height: 900px;
-  margin-top: -330px;
+  width: 100vw;
+  z-index: -100;
+  object-fit: cover;
+  height: 100%;
+  margin-top: -150px;
+  filter: brightness(60%);
 }
 
 .exercise-card {
@@ -119,10 +127,6 @@ body {
   .left-arrow,
   .right-arrow {
     position: static !important;
-  }
-
-  .hero-banner-img {
-    display: none;
   }
 
   .exercise-card {

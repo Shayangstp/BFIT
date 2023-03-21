@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,800&display=swap");
+
 .image {
   width: 48px;
   height: 48px;
@@ -6,11 +8,25 @@
 
 .action {
   text-decoration: none;
-  color: #3a1212;
+  color: #cfcaca;
 }
 
 .link {
   text-decoration: none;
-  color: #3a1212;
-  border-bottom: 3px solid #ff2625;
+  color: #000000;
+}
+
+.link:hover {
+  color: #000000;
+  background-color: #ffffff;
+  font-weight: bold;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #fff;
+  opacity: 0.8;
+  z-index: 1;
 }

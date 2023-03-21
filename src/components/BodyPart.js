@@ -13,8 +13,8 @@ const BodyPart = ({ bodyPart, setBodyPart, setExrcises, item, title }) => {
         borderTop: bodyPart === item ? "4px solid #ff2526" : "",
         background: "#fff",
         borderBottomLeftRadius: "20px",
-        width: "270px",
-        height: "280px",
+        width: "100px",
+        height: "110px",
         cursor: "pointer",
 
         gap: "47px",

@@ -1,53 +1,54 @@
 import React from "react";
-import { Box, Stack, Typography, Button } from "@mui/material";
-import heroBanner from "../assets/images/banner.png";
+import { Box, Button } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { lightBlue } from "@mui/material/colors";
+import classes from "./HeroBanner.module.css";
+import heroBanner from "../assets/images/banner.jpg";
 
 const HeroBanner = () => {
+  const theme = createTheme({
+    palette: {
+      primary: lightBlue,
+    },
+  });
+
   return (
-    <Box
-      sx={{
-        mt: { lg: "212px", xs: "70px" },
-        ml: { sm: "50px" },
-      }}
-      position="relative"
-      p="20px"
-    >
-      <Typography color="#ff2625" fontWeight="600" fontSize="26px">
-        Fitness Club
-      </Typography>
-      <Typography
-        fontWeight={700}
-        sx={{ fontSize: { lg: "44px", xs: "40px" } }}
-        mb="23px"
-        mt="30px"
+    <div className={classes.container}>
+      <Box
+        width="100%"
+        position="relative"
+        height="900px"
+        m="0"
+        zIndex="-1"
+        id="home"
       >
-        Sweet, Smile <br /> and Repeat
-      </Typography>
-      <Typography fontSize="22px" lineHeight="35px" mb={4}>
-        Check out the most Effective Exercises
-      </Typography>
-      <Button
-        variant="contained"
-        color="error"
-        href="#exercises"
-        sx={{ background: "#ff2526" }}
-      >
-        Expolre Exercises
-      </Button>
-      <Typography
-        fontWeight={600}
-        color="#ff2625"
-        sx={{
-          opacity: 0.1,
-          display: { lg: "block", xs: "none" },
-        }}
-        fontSize=" 200px "
-        mt={4}
-      >
-        Exercise
-      </Typography>
-      <img src={heroBanner} className="hero-banner-img" />
-    </Box>
+        <div className={classes.heroText}>NO Pain NO Gain</div>
+        <div className={classes.heroTextQoute}>
+          “Your body can stand almost anything. It’s your mind that you have to
+          convince.”
+          <br /> “Once you are exercising regularly, the hardest thing is to
+          stop it.” <br />
+          “Rome wasn’t built in a day, but they worked on it every single day.”
+        </div>
+        <img src={heroBanner} className="hero-banner-img" />
+      </Box>
+      <ThemeProvider theme={theme}>
+        <Button
+          variant="outlined"
+          size="large"
+          sx={{
+            position: "absolute",
+            top: "50%",
+            zIndex: "1",
+            cursor: "pointer",
+          }}
+        >
+          <a href="#search" className={classes.link}>
+            Just Do it
+          </a>
+        </Button>
+      </ThemeProvider>
+    </div>
   );
 };
 

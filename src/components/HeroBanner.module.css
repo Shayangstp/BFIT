@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital@1&display=swap");
+
+.heroText {
+  position: absolute;
+  font-family: "Quantico", sans-serif;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  top: 30%;
+  font-size: 90px;
+  font-weight: bold;
+  z-index: 100;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .heroText {
+    font-size: 60px;
+    top: 33%;
+  }
+}
+@media (max-width: 468px) {
+  .heroText {
+    font-size: 40px;
+    top: 37%;
+  }
+}
+@media (max-width: 310px) {
+  .heroText {
+    font-size: 20px;
+    top: 33%;
+  }
+}
+
+.heroTextQoute {
+  position: absolute;
+  font-family: "Quantico", sans-serif;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  top: 43%;
+  font-size: 10px;
+  z-index: 100;
+  opacity: 0.5;
+  text-align: center;
+}
+
+@media (max-width: 362px) {
+  .heroTextQoute {
+    font-size:10px;
+    top: 42%;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: gray;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 750px;
+}

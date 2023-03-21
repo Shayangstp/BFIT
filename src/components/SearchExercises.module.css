@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital@1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.text {
+  font-family: 'Open Sans', sans-serif;
+  color: #161616;
+}
+.text2 {
+  font-family: 'Open Sans', sans-serif;
+  color: #f0e370;
+  position: absolute;
+  top: 1px;
+  right: -154px;
+  z-index: -1;
+  width: 800px;
+}
